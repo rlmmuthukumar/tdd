@@ -21,3 +21,15 @@ def add_newline(numbers):
     numbers = numbers.replace("\n", ",")
     num_list = map(int, numbers.split(","))
     return sum(num_list)
+
+def add_custom(numbers):
+    if not numbers:
+        return 0
+
+    if numbers.startswith("//"):
+        delimiter, numbers = numbers[2:].split("\n", 1)
+        numbers = numbers.replace(delimiter, ",")
+
+    numbers = numbers.replace("\n", ",")
+    num_list = map(int, numbers.split(","))
+    return sum(num_list)
